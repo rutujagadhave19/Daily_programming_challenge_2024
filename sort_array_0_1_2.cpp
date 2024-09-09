@@ -3,10 +3,10 @@ using namespace std;
 
 //Bruteforce
 ///Using in_built sorting function
-void sortarr(int arr[],int n)
-{
-    sort(arr,arr+n);
-}
+// void sortarr(int arr[],int n)
+// {
+//     sort(arr,arr+n);
+// }
 //Time Complexity-O(n*logn)..n=number of array elements
 //Space Complexity-O(n)...extra space used by merge sort
 
@@ -43,41 +43,41 @@ void sortarr(int arr[],int n)
 //         i++;
 //     }
 // }
-//Time Complexity-O(2n)...n is number of array elements
+//Time Complexity-O(2n)...n is the number of array elements
 //Space Complexity-O(1)...using no extra space
 
 
 
 //Optimal
 ///Using Dutch National Flag Algorithm Optimal Approach
-//This approach assumes that first range is of zero second is of 
-//one and third is of three...and by traversing takes tjem to their range
-    // void sortarr(int arr[],int n) {
+//This approach assumes that the first range is of zero second is of 
+//one and third is of three...and by traversing takes them to their range
+    void sortarr(int arr[],int n) {
     
-    // if(n<3)
-    // {
-    //     sort(arr,arr+n);
-    //     return;
-    // }
-    // int low=0,mid=0,high=n-1;
-    // while(low<=mid&&mid<=high)
-    // {
-    //   if(arr[mid]==0)
-    //   {
-    //     swap(arr[low],arr[mid]);
-    //     low++,mid++;
-    //  }    
-    //  else if(arr[mid]==1)
-    //  {
-    //     mid++;
-    //  }
-    //  else
-    //  {
-    //     swap(arr[mid],arr[high]);
-    //     high--;
-    //  }
-    // }
-    // }
+    if(n<3)
+    {
+        sort(arr,arr+n);
+        return;
+    }
+    int low=0,mid=0,high=n-1;
+    while(low<=mid&&mid<=high)
+    {
+      if(arr[mid]==0)
+      {
+        swap(arr[low],arr[mid]);
+        low++,mid++;
+     }    
+     else if(arr[mid]==1)
+     {
+        mid++;
+     }
+     else
+     {
+        swap(arr[mid],arr[high]);
+        high--;
+     }
+    }
+    }
 //Time Complexity-O(n)...n=number of array elements;
 //Space Complexity-O(1)...Using No extra space
 
